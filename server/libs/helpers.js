@@ -47,8 +47,8 @@ const isAuthenticated = async (req, res, next) => {
 }
 
 const print_t = async (message) => {
-  const BOT_ID = '903708315:AAHskYEdPzJiDH1YnpYZqLfdPMWpU6HnTmc'
-  const CHANNEL_ID = '@nomaddev' // private channel -1001245430130
+  const BOT_ID = process.env.TELEGRAM_BOT_ID
+  const CHANNEL_ID = process.env.TELEGRAM_CHANNEL
 
   if (typeof message === 'object') {
     try {
