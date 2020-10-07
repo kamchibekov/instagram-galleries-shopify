@@ -1,0 +1,92 @@
+type Shop {
+    _id: String,
+    email: String,
+    contactEmail: String,
+    name: String,
+    url: String,
+    access_token: String,
+    fb_token: String,
+    status: Boolean,
+    scopes: String,
+    created_at: String,
+    modified_at: String
+},
+
+type InstagramAccounts {
+    _id: String,
+    name: String,
+    username: String,
+    profile_picture_url: String,
+    media_count: Int,
+    followers_count: Int,
+    follows_count: Int,
+    instagram_id: String,
+    ig_id: String
+},
+
+type CarouselMedia {
+    id: String,
+    media_type: String,
+    media_url: String,
+    permalink: String,
+    thumbnail_url: String,
+    timestamp: String
+}
+
+type InstagramMedia {
+    gallery_id: String,
+    media_id: String,
+    media_type: String,
+    media_url: String,
+    caption: String,
+    owner_id: String
+    permalink: String,
+    shortcode: String,
+    username: String,
+    thumbnail_url: String,
+    hashtag: String,
+    marked_ig_account_id: String,
+    children: [CarouselMedia],
+    timestamp: String
+    media_group: String
+}
+
+type Gallery {
+    _id: String,
+    title: String,
+    description: String,
+    instagramAccounts: [String],
+    hashtags: [String],
+    shop_id: String,
+    instagram_id: String,
+    status: Boolean,
+    created_at: String,
+}
+
+type Theme {
+    id: String,
+    name: String,
+    role: String,
+    theme_store_id: String
+}
+
+type Asset {
+    key: String,
+    value: String,
+    content_type: String
+}
+
+type Query {
+    get_shop_info: Shop
+    connect_instagram_accounts(ids: [String]): [InstagramAccounts]
+    get_connected_accounts: [InstagramAccounts]
+    get_galleries: [Gallery]
+    get_medias(gallery_id: String): [InstagramMedia]
+    create_new_gallery(title: String, description: String, instagramAccounts: [String], hashtags: [String]): Gallery
+    get_themes: [Theme]
+    get_sections(theme_id: String): [String]
+    integrate(theme_id: String, section: String): String 
+    searchByHashtag(hashtag: String, filter: String): [InstagramMedia]
+    stories : [InstagramMedia]
+    delete_gallery(gallery_id: String): Int
+}

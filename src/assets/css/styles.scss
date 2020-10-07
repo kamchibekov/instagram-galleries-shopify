@@ -1,0 +1,48 @@
+header {
+  height: 56px;
+  background: #3b4f66;
+}
+
+.aside-component {
+  width: 300px;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  bottom: 0;
+  border-right: 1px solid #dfe3e8;
+  display: block;
+  z-index: 1;
+  padding: 8px;
+  transition: 0.4s;
+  background: #f4f6f8;
+}
+
+.main-component {
+  margin-left: 300px;
+  z-index: 0;
+  padding: 10px;
+}
+
+.inline-flex ul.Polaris-ChoiceList__Choices {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 420px) {
+  .aside-component:not(.active) {
+    left: -300px;
+  }
+  .main-component {
+    margin-left: 0;
+  }
+}
+
+.single-media-element__wrapper {
+  display: flex;
+
+  img, video {
+    width: 100%;
+    object-fit: cover;
+  }
+}

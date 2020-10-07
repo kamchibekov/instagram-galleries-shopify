@@ -1,0 +1,5 @@
+.nomad-developers__gallery-media {
+    display: grid;
+    grid-template-columns: repeat(5, calc(100%/5));
+    grid-gap: 3px;
+}

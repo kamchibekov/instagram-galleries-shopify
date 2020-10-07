@@ -1,0 +1,21 @@
+<div class="nomad-developers__gallery-media container page-width" {{ section.settings.option_galleries_id }} ></div>
+{% schema %}
+{
+    "name": "Shoppable Instagram",
+    "class": "nomad-developers__gallery",
+    "settings": [
+        {
+            "type": "select",
+            "id": "option_galleries_id",
+            "options": [
+                {
+                    "value": "0",
+                    "label": "No galleries"                    
+                }
+            ],
+            "label": "Choose gallery",
+            "default": "0"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+{% layout "layouts/main.liquid" %}
+
+{% block content %} 
+{% if shop %}
+<script type="text/javascript">
+    window.SHOP = {{ shop | json }};
+</script>
+
+{% endif %}
+
+<div id="app"></div>
+
+<script type="text/javascript" src="app.js"></script>
+
+{% endblock %}
