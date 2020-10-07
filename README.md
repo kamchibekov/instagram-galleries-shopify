@@ -1,10 +1,11 @@
 # instagram-galleries-shopify
 Show Instagram pictures as a gallery on your Shopify website
 
-# 1. npm install
+### 1. npm install
 
-# 2 .env file should be created in the root folder with these constants in it:
+### 2 .env file should be created in the root folder with these constants in it:
 
+```
 DOMAIN="your domain"
 DB_URL="Mongo DB url. We used Mlab"
 SHOPIFY_API_KEY="Your app's API KEY from Shopify Partner Dashboard"
@@ -19,7 +20,8 @@ FB_SCOPES="instagram_basic,pages_manage_ads,pages_manage_metadata,pages_read_eng
 FB_GRAPH_URL="https://graph.facebook.com/"
 FB_GRAPH_VERSION="v7.0"
 SENTRY_DSN="This is optional. If you want you can track bugs"
+```
 
-# 3. npm start
+### 3. npm start
 
 
